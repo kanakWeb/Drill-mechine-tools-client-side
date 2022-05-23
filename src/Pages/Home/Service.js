@@ -1,0 +1,28 @@
+import React from 'react';
+import {useNavigate} from 'react-router-dom';
+
+const Service = ({service}) => {
+const{_id,img,name,quantity,price,des}=service
+
+
+const navigate=useNavigate()
+    const handleDetails=(id)=>{
+      navigate(`/service/${id}`)
+    }
+    return (
+        <div className="card w-96 bg-base-100 shadow-xl">
+  <figure><img src={img} alt="Shoes" /></figure>
+  <div className="card-body">
+    <h2 className="card-title">{name}</h2>
+    <p><span className='font-bold text-black text-xl'>Description : </span> {des}</p>
+    <p ><span className='font-bold text-black'> Quantity :</span> {quantity}</p>
+    <p ><span className='font-bold text-black'>Price :</span>  ${price}</p>
+    <div className="card-actions justify-center">
+      <button onClick={()=>handleDetails(_id)} className="btn bg-gradient-to-r border-0 from-orange-400 to-blue-500 btn-wide text-white font-bold">Order Now</button>
+    </div>
+  </div>
+</div>
+    );
+};
+
+export default Service;
