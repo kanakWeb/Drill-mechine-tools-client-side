@@ -18,7 +18,7 @@ const navigate=useNavigate()
     <p ><span className='font-bold text-black'> Quantity :</span> {quantity}</p>
     <p ><span className='font-bold text-black'>Price :</span>  ${price}</p>
     <div className="card-actions justify-center">
-      <button onClick={()=>handleDetails(_id)} className="btn bg-gradient-to-r border-0 from-orange-400 to-blue-500 btn-wide text-white font-bold">Order Now</button>
+      <button onClick={()=>handleDetails(_id)} className="btn bg-gradient-to-r border-0 from-orange-600 to-blue-600 btn-wide text-white font-bold">Order Now</button>
     </div>
   </div>
 </div>

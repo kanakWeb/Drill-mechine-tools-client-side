@@ -1,7 +1,11 @@
+import { signOut } from "firebase/auth";
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
+import auth from "../../firebase.init";
 
 const Navbar = () => {
+  const [user]=useAuthState(auth)
   const menuItems = (
     <>
       <li>
@@ -12,6 +16,11 @@ const Navbar = () => {
       </li>
     </>
   );
+
+  const logout = () => {
+    signOut(auth);
+  };
+  console.log(user.reloadUserInfo.photoUrl);
 
   return (
     <div className="navbar bg-stone-300 sticky top-0 z-50">
@@ -40,7 +49,7 @@ const Navbar = () => {
             {menuItems}
           </ul>
         </div>
-        <a className="btn btn-ghost font-bold text-gray-700 upper-case text-2xl">
+        <a className="btn btn-ghost font-bold text-gray-700 upper-case lg:text-2xl">
           Drill Machine Tools
         </a>
       </div>
@@ -48,13 +57,15 @@ const Navbar = () => {
         <ul className="menu menu-horizontal p-0">{menuItems}</ul>
       </div>
       <div className="navbar-end">
-        <div className="dropdown dropdown-end">
+        {user?
+          <>
+          <div className="dropdown dropdown-end">
           <label
             tabIndex="0"
             className="btn btn-ghost btn-circle avatar"
           >
             <div className="w-10 rounded-full">
-              <img src="https://api.lorem.space/image/face?hash=33791" />
+              <img src={user.reloadUserInfo.photoUrl}  alt="space"/>
             </div>
           </label>
           <ul
@@ -68,13 +79,18 @@ const Navbar = () => {
               </a>
             </li>
             <li>
-              <a>Settings</a>
+              <a>{user.displayName}</a>
             </li>
             <li>
-              <a>logOut</a>
+              <a onClick={logout}>logOut</a>
             </li>
           </ul>
         </div>
+          </>:<Link to="/login">Login</Link>
+        }
+        
+        
+      
       </div>
     </div>
   );
