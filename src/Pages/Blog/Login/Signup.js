@@ -1,14 +1,15 @@
 import React from "react";
-import auth from "../../../firebase.init";
 import {
-  useSignInWithEmailAndPassword,
+  useCreateUserWithEmailAndPassword,
   useSignInWithGoogle,
+  useUpdateProfile,
 } from "react-firebase-hooks/auth";
+import { Link,useNavigate } from "react-router-dom";
+import auth from "../../../firebase.init";
 import { useForm } from "react-hook-form";
 import Loading from "../../Share/Loading";
-import { Link, useLocation, useNavigate } from "react-router-dom";
 
-const Login = () => {
+const Signup = () => {
   const [signInWithGoogle, GoogleUser, GoogleLoading, GoogleError] =
     useSignInWithGoogle(auth);
 
@@ -18,43 +19,77 @@ const Login = () => {
     handleSubmit,
   } = useForm();
 
-  const [signInWithEmailAndPassword, user, loading, error] =
-    useSignInWithEmailAndPassword(auth);
+  const [createUserWithEmailAndPassword, user, loading, error] =
+    useCreateUserWithEmailAndPassword(auth);
 
-  const navigate = useNavigate();
-  const location = useLocation();
+  const [updateProfile, updating, updateError] =
+    useUpdateProfile(auth);
 
-  let from = location.state?.from?.pathname || "/";
 
-  let SignInErrorMessage;
 
-  if (loading || GoogleLoading) {
+    let navigate = useNavigate();
+    
+    
+  
+  
+
+
+  let SignUpErrorMessage;
+
+  if (loading || GoogleLoading || updating) {
     return <Loading></Loading>;
   }
 
-  if (error || GoogleError) {
-    SignInErrorMessage = (
+  if (error || GoogleError || updateError) {
+    SignUpErrorMessage = (
       <p className="text-red-600">
-        {error?.message || GoogleError?.message}
+        {error?.message ||
+          GoogleError?.message ||
+          updateError?.message}
       </p>
     );
   }
   if (user || GoogleUser) {
-    navigate(from, { replace: true });
+    console.log(user || GoogleUser);
   }
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     console.log(data);
-    signInWithEmailAndPassword(data.email, data.password);
+    await createUserWithEmailAndPassword(data.email, data.password);
+    await updateProfile({ displayName: data.name });
+    console.log("Update done");
+    navigate("/");
   };
-
   return (
     <div className="flex h-screen justify-center items-center">
       <div className="card w-96 bg-base-300 shadow-xl">
         <div className="card-body">
-          <h2 className="text-center font-bold text-2xl">Login</h2>
+          <h2 className="text-center font-bold text-2xl">Sign Up</h2>
 
           <form onSubmit={handleSubmit(onSubmit)}>
+            <div className="form-control w-full max-w-xs">
+              <label className="label">
+                <span className="label-text font-bold">Name</span>
+              </label>
+              <input
+                type="text"
+                placeholder="Your Name"
+                className="input input-bordered w-full max-w-xs"
+                {...register("name", {
+                  required: {
+                    value: true,
+                    message: "Name is Required",
+                  },
+                })}
+              />
+              <label className="label">
+                {errors.name?.type === "required" && (
+                  <span className="label-text-alt text-red-600">
+                    {errors.name.message}
+                  </span>
+                )}
+              </label>
+            </div>
             <div className="form-control w-full max-w-xs">
               <label className="label">
                 <span className="label-text font-bold">Email</span>
@@ -66,7 +101,7 @@ const Login = () => {
                 {...register("email", {
                   required: {
                     value: true,
-                    message: "email is Required",
+                    message: "Email is Required",
                   },
                   pattern: {
                     value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
@@ -119,16 +154,15 @@ const Login = () => {
                 )}
               </label>
             </div>
-            {SignInErrorMessage}
+            {SignUpErrorMessage}
             <button className="btn font-bold w-full btn-info btn-outline max-w-xs mt-4">
-              Login
+              Sign Up
             </button>
           </form>
           <p>
-            Are you New user ?{" "}
-            <Link className="text-green-500 font-bold" to="/signup">
-              {" "}
-              Create a New Account?
+            Already have an account ?{" "}
+            <Link className="text-green-500 font-bold" to="/login">
+              Please login
             </Link>
           </p>
           <div className="divider">OR</div>
@@ -144,4 +178,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Signup;

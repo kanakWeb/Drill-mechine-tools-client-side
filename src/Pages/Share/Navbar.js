@@ -1,8 +1,9 @@
 import { signOut } from "firebase/auth";
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
+import User from '../../Assets/img/user.jpg'
 
 const Navbar = () => {
   const [user]=useAuthState(auth)
@@ -16,11 +17,14 @@ const Navbar = () => {
       </li>
     </>
   );
+console.log(user);
+  const navigate=useNavigate()
 
   const logout = () => {
     signOut(auth);
+    navigate('/login')
   };
-  console.log(user.reloadUserInfo.photoUrl);
+ 
 
   return (
     <div className="navbar bg-stone-300 sticky top-0 z-50">
@@ -65,7 +69,7 @@ const Navbar = () => {
             className="btn btn-ghost btn-circle avatar"
           >
             <div className="w-10 rounded-full">
-              <img src={user.reloadUserInfo.photoUrl}  alt="space"/>
+              <img src={user?.reloadUserInfo?.photoUrl?user?.reloadUserInfo?.photoUrl:User}  alt="0"/>
             </div>
           </label>
           <ul
@@ -79,14 +83,14 @@ const Navbar = () => {
               </a>
             </li>
             <li>
-              <a>{user.displayName}</a>
+              <a>{user?.displayName}</a>
             </li>
             <li>
-              <a onClick={logout}>logOut</a>
+              <a  onClick={logout}>LogOut</a>
             </li>
           </ul>
         </div>
-          </>:<Link to="/login">Login</Link>
+          </>:<Link className="font-bold" to="/login">Login</Link>
         }
         
         
