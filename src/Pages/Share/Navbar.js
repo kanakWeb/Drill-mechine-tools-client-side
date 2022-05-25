@@ -17,7 +17,7 @@ const Navbar = () => {
       </li>
     </>
   );
-console.log(user);
+
   const navigate=useNavigate()
 
   const logout = () => {

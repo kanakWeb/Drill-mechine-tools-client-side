@@ -2,11 +2,13 @@ import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useParams } from "react-router-dom";
 import auth from "../../firebase.init";
+import { toast } from "react-toastify";
 
 const Purchase = () => {
   const [user, loading, error] = useAuthState(auth);
   const { serviceId } = useParams();
   const [service, setServices] = useState([]);
+  const [disable, setDisable] = useState(false);
   const {
     _id,
     img,
@@ -25,34 +27,67 @@ const Purchase = () => {
       });
   }, []);
 
+  const [quantity, setQuantity] = useState(MinQuantity);
+  const [servicePrice, SetServicePrice] = useState(quantity);
+
+  /* const managePrice = e => {
+    const price = parseInt(e.target.value);
+    console.log(price)
+    SetServicePrice(price)
+    } */
+
+  const manageQuantity = (e) => {
+    const quantity = parseInt(e.target.value);
+    if (quantity < MinQuantity) {
+      setDisable(true);
+      toast.error(`Quantity can not be less than  ${MinQuantity} `, {
+        toastId: "quantityOne",
+      });
+    } else if (quantity > AvailableQuantity) {
+      setDisable(true);
+      toast.error(
+        `Quantity can to be gater than ${AvailableQuantity}`,
+        { toastId: "quantityTwo" }
+      );
+    } else {
+      setDisable(false);
+    }
+    setQuantity(quantity);
+    SetServicePrice(quantity * parseInt(price));
+  };
+
+  /* console.log(servicePrice, quantity); */
+
   const onSubmit = (event) => {
     event.preventDefault();
-   
+
     const purchase = {
       serviceID: _id,
       service: name,
-      serviceAvailableQuantity: AvailableQuantity,
-      serviceMinQuantity: MinQuantity,
-      client: user.email,
+      quantity,
+      servicePrice,
+      clientEmail: user.email,
       clientName: user.displayName,
       phone: event.target.phone.value,
     };
-    //http://localhost:5000/purchase
+
+    
     fetch("http://localhost:5000/purchase", {
       method: "POST",
-      headers:{
-        'content-type':"application/json"
+      headers: {
+        "content-type": "application/json",
       },
-      body:JSON.stringify(purchase)
+      body: JSON.stringify(purchase),
     })
-    .then(res=>res.json())
-    .then(data=>{
-      console.log(data);
-    })
-
+      .then((res) => res.json())
+      .then((data) => {
+        toast("Purchase Done");
+      });
 
     event.target.reset();
   };
+
+
 
   return (
     <div className="card m-2 lg:card-side g-4  shadow-xl">
@@ -136,6 +171,7 @@ const Purchase = () => {
                 <span className="label-text">Quantity</span>
               </label>
               <input
+                onChange={manageQuantity}
                 type="number"
                 placeholder={MinQuantity}
                 className="input input-bordered"
@@ -147,9 +183,11 @@ const Purchase = () => {
               </label>
               <span className="label-text">Price</span>
               <input
-                type="number"
+                value={servicePrice}
                 placeholder={price}
+                type="number"
                 className="input input-bordered"
+                readOnly
               />
             </div>
             <div className="form-control">
@@ -165,7 +203,9 @@ const Purchase = () => {
               />
             </div>
             <div className="form-control mt-10">
-              <button className="btn btn-primary">Purchase</button>
+              <button disabled={disable} className="btn btn-primary">
+                Purchase
+              </button>
             </div>
           </form>
         </div>
