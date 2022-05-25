@@ -13,6 +13,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import MyPurchase from "./Pages/Dashboard/MyPurchase";
 import AddReviews from "./Pages/Dashboard/AddReviews";
+import AllUser from "./Pages/Dashboard/AllUser";
 
 
 
@@ -45,6 +46,7 @@ function App() {
         >
           <Route index element={<MyPurchase></MyPurchase>}></Route>
           <Route path="review" element={<AddReviews></AddReviews>}></Route>
+          <Route path="allUser" element={<AllUser></AllUser>}></Route>
         </Route>
       </Routes>
       <Footer></Footer>
