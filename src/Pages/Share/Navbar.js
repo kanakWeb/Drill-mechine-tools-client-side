@@ -3,10 +3,17 @@ import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
-import User from '../../Assets/img/user.jpg'
+import User from "../../Assets/img/user.jpg";
 
 const Navbar = () => {
-  const [user]=useAuthState(auth)
+  const [user] = useAuthState(auth);
+  const navigate = useNavigate();
+
+  const logout = () => {
+    signOut(auth);
+    navigate("/login");
+  };
+
   const menuItems = (
     <>
       <li>
@@ -15,16 +22,58 @@ const Navbar = () => {
       <li>
         <Link to="/blog">Blog</Link>
       </li>
+      {user && (
+        <li>
+          <Link to="/dashboard">DashBoard</Link>
+        </li>
+      )}
+      <li>
+        {user ? (
+          <>
+            <div className="dropdown dropdown-end">
+              <label
+                tabIndex="0"
+                className="btn btn-ghost btn-circle avatar"
+              >
+                <div className="w-10 rounded-full">
+                  <img
+                    src={
+                      user?.reloadUserInfo?.photoUrl
+                        ? user?.reloadUserInfo?.photoUrl
+                        : User
+                    }
+                    alt="0"
+                  />
+                </div>
+              </label>
+              <ul
+                tabIndex="0"
+                className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
+              >
+                <li>
+                  <a className="justify-between">
+                    Profile
+                    <span className="badge">Pro</span>
+                  </a>
+                </li>
+                <li>
+                  <a>{user?.displayName}</a>
+                </li>
+                <li>
+                  <a onClick={logout}>LogOut</a>
+                </li>
+              </ul>
+            </div>
+          </>
+        ) : (
+          <Link className="font-bold" to="/login">
+            Login
+          </Link>
+        )}
+        ;
+      </li>
     </>
   );
-
-  const navigate=useNavigate()
-
-  const logout = () => {
-    signOut(auth);
-    navigate('/login')
-  };
- 
 
   return (
     <div className="navbar  bg-stone-300 sticky top-0 z-50">
@@ -57,44 +106,8 @@ const Navbar = () => {
           Drill Machine Tools
         </a>
       </div>
-      <div className="navbar-center hidden lg:flex">
+      <div className="navbar-end hidden lg:flex">
         <ul className="menu menu-horizontal p-0">{menuItems}</ul>
-      </div>
-      <div className="navbar-end">
-        {user?
-          <>
-          <div className="dropdown dropdown-end">
-          <label
-            tabIndex="0"
-            className="btn btn-ghost btn-circle avatar"
-          >
-            <div className="w-10 rounded-full">
-              <img src={user?.reloadUserInfo?.photoUrl?user?.reloadUserInfo?.photoUrl:User}  alt="0"/>
-            </div>
-          </label>
-          <ul
-            tabIndex="0"
-            className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
-          >
-            <li>
-              <a className="justify-between">
-                Profile
-                <span className="badge">Pro</span>
-              </a>
-            </li>
-            <li>
-              <a>{user?.displayName}</a>
-            </li>
-            <li>
-              <a  onClick={logout}>LogOut</a>
-            </li>
-          </ul>
-        </div>
-          </>:<Link className="font-bold" to="/login">Login</Link>
-        }
-        
-        
-      
       </div>
     </div>
   );
