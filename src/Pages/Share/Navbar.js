@@ -27,7 +27,7 @@ console.log(user);
  
 
   return (
-    <div className="navbar bg-stone-300 sticky top-0 z-50">
+    <div className="navbar  bg-stone-300 sticky top-0 z-50">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex="0" className="btn btn-ghost lg:hidden">
@@ -53,7 +53,7 @@ console.log(user);
             {menuItems}
           </ul>
         </div>
-        <a className="btn btn-ghost font-bold text-gray-700 upper-case lg:text-2xl">
+        <a className="btn btn-ghost font-bold text-cyan-500 upper-case lg:text-2xl">
           Drill Machine Tools
         </a>
       </div>

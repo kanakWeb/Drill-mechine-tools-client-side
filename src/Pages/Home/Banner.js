@@ -12,10 +12,10 @@ const Banner = () => {
          className="hero min-h-screen">
   <div className="hero-overlay bg-opacity-60"></div>
   <div className="hero-content text-center text-white">
-    <div className="max-w-5xl">
-      <h1 className="mb-5 text-5xl pt-10 font-bold">Hello there</h1>
-      <p className="mb-5 text-3xl">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-      <button className="btn bg-gradient-to-r from-orange-400 to-blue-500 text-white font-bold btn-wide">Get Started</button>
+    <div className="max-w-5xl bg-slate-500 py-10 rounded-lg bg-opacity-10 ">
+      <h1 className="mb-5 text-5xl text-cyan-500 pt-10 font-bold">Drill Machine Tool There</h1>
+      <p className="mb-5 text-3xl">Drilling and pump work are inherently dangerous and require careful safety planning and procedures. Some of these can addressed with general</p>
+      <button className="btn mt-12 bg-gradient-to-r from-orange-400 to-blue-500 text-white font-bold btn-wide">Get Started</button>
     </div>
   </div>
 </div>

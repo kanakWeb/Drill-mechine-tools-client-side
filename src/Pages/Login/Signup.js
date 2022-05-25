@@ -5,9 +5,9 @@ import {
   useUpdateProfile,
 } from "react-firebase-hooks/auth";
 import { Link,useNavigate } from "react-router-dom";
-import auth from "../../../firebase.init";
+import auth from "../../firebase.init";
 import { useForm } from "react-hook-form";
-import Loading from "../../Share/Loading";
+import Loading from "../Share/Loading";
 
 const Signup = () => {
   const [signInWithGoogle, GoogleUser, GoogleLoading, GoogleError] =

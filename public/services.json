@@ -3,53 +3,59 @@
     {
         "_id": 1,
         "name": "IRadix DPS3000SY 2700 Watts",
-        "des":"Speed: 750 RPM,Power Source: Cordless-Electric,Battery Cell Type: Lithium, Voltage: 20 Volts,Battery Capacity: 2 Ah",
+        "des":" Speed: 750 RPM · Power Source: Cordless-Electric · Battery Cell Type: Lithium · Voltage: 20 Volts · Battery Capacity: 2ah",
         "img":"https://i.ibb.co/8jrZLrj/product-2.jpg",
-        "quantity":200,
-        "price":100
+        "MinQuantity":200,
+        "AvailableQuantity":6000,
+        "price":900
        
       },
       {
         "_id": 2,
         "name": "Brandix Drilling Machine DM2019KW4 4kW",
-        "des":"Speed: 750 RPM Power Source: Cordless-Electric Battery Cell Type: Lithium Voltage: 20 Volts Battery Capacity: 2 Ah",
+        "des":"Speed: 550 RPM Power Source: Cordless-Electric Battery Cell Type: Lithium Voltage: 30 Volts Battery Capacity: 2 Ah",
         "img":"https://i.ibb.co/Q8KHsXN/product-6.jpg",
-        "quantity":200,
-        "price":100
+        "MinQuantity":200,
+        "AvailableQuantity":8000,
+        "price":800
       },
       {
         "_id": 3,
         "name": "Drill Series 3 Brandix KSR4590PQS 1500 Watts",
-        "des":"Speed: 750 RPM Power Source: Cordless-Electric Battery Cell Type: Lithium Voltage: 20 Volts Battery Capacity: 2 Ah",
+        "des":"Speed: 950 RPM Power Source: Cordless-Electric Battery Cell Type: Lithium Voltage: 50 Volts Battery Capacity: 8Ah",
         "img":"https://i.ibb.co/FVbtj5H/product-4.jpg",
-        "quantity":200,
-        "price":100
+        "MinQuantity":200,
+        "AvailableQuantity":2000,
+        "price":700
        
       },
     {
       "_id": 4,
       "name": "Drill Screwdriver Brandix ALX7054 200 Watts",
-      "des":"Speed: 750 RPM Power Source: Cordless-Electric Battery Cell Type: Lithium Voltage: 20 Volts Battery Capacity: 2 Ah",
+      "des":"Speed: 300 RPM Power Source: Cordless-Electric Battery Cell Type: Lithium Voltage: 30 Volts Battery Capacity: 7Ah",
       "img":"https://i.ibb.co/PG2tfcM/product-3.jpg",
-      "quantity":200,
-      "price":100
+      "MinQuantity":200,
+      "AvailableQuantity":4000,
+      "price":500
     
     },
     {
       "_id": 5,
       "name": "Brandix Screwdriver SCREW1500ACC",
-      "des":"Speed: 750 RPM Power Source: Cordless-Electric Battery Cell Type: Lithium Voltage: 20 Volts Battery Capacity: 2 Ah",
+      "des":"Speed: 850 RPM Power Source: Cordless-Electric Battery Cell Type: Lithium Voltage: 40 Volts Battery Capacity: 9Ah",
       "img":"https://i.ibb.co/PxhZnkq/18-285x371.jpg",
-      "quantity":200,
-      "price":100
+      "MinQuantity":200,
+      "AvailableQuantity":6000,
+      "price":600
     },
     {
       "_id": 6,
       "name": "Brandix Angle Grinder KZX3890PQW",
-      "des":"Speed: 750 RPM,Power Source: Cordless-Electric,Battery Cell Type: Lithium,Voltage: 20 Volts,Battery Capacity: 2 Ah",
+      "des":"Speed: 9000 RPM,Power Source: Cordless-Electric,Battery Cell Type: Lithium,Voltage: 50 Volts,Battery Capacity: 10Ah",
       "img":"https://i.ibb.co/kxd1DGY/19-285x371.jpg",
-      "quantity":200,
-      "price":100
+      "MinQuantity":200,
+      "AvailableQuantity":8000,
+      "price":800
     }
     
   ]

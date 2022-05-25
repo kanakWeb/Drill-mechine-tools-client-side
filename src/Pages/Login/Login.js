@@ -1,11 +1,11 @@
 import React from "react";
-import auth from "../../../firebase.init";
+import auth from "../../firebase.init";
 import {
   useSignInWithEmailAndPassword,
   useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
-import Loading from "../../Share/Loading";
+import Loading from "../Share/Loading";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Login = () => {
@@ -43,9 +43,10 @@ const Login = () => {
     navigate(from, { replace: true });
   }
 
-  const onSubmit = (data) => {
+  const onSubmit = (data,event) => {
     console.log(data);
     signInWithEmailAndPassword(data.email, data.password);
+    
   };
 
   return (
