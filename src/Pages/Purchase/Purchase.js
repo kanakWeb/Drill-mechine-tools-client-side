@@ -71,7 +71,6 @@ const Purchase = () => {
       phone: event.target.phone.value,
     };
 
-    
     fetch("http://localhost:5000/purchase", {
       method: "POST",
       headers: {
@@ -81,13 +80,13 @@ const Purchase = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        toast("Purchase Done");
+        if (data) {
+          toast("Purchase Done");
+        }
       });
 
     event.target.reset();
   };
-
-
 
   return (
     <div className="card m-2 lg:card-side g-4  shadow-xl">

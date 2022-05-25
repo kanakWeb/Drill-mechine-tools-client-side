@@ -30,7 +30,10 @@ const Navbar = () => {
       <li>
         {user ? (
           <>
-            <div className="dropdown dropdown-end">
+            <div>
+              <li onClick={logout}>LogOut</li>
+            </div>
+            <div className="">
               <label
                 tabIndex="0"
                 className="btn btn-ghost btn-circle avatar"
@@ -45,24 +48,8 @@ const Navbar = () => {
                     alt="0"
                   />
                 </div>
+                <div></div>
               </label>
-              <ul
-                tabIndex="0"
-                className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
-              >
-                <li>
-                  <a className="justify-between">
-                    Profile
-                    <span className="badge">Pro</span>
-                  </a>
-                </li>
-                <li>
-                  <a>{user?.displayName}</a>
-                </li>
-                <li>
-                  <a onClick={logout}>LogOut</a>
-                </li>
-              </ul>
             </div>
           </>
         ) : (
@@ -70,7 +57,6 @@ const Navbar = () => {
             Login
           </Link>
         )}
-        ;
       </li>
     </>
   );
@@ -108,6 +94,27 @@ const Navbar = () => {
       </div>
       <div className="navbar-end hidden lg:flex">
         <ul className="menu menu-horizontal p-0">{menuItems}</ul>
+      </div>
+      <div className="mx-auto">
+
+      <label
+      for="dashboard-sidebar"
+       tabIndex="1" className="btn btn-ghost lg:hidden">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h8m-8 6h16"
+              />
+            </svg>
+          </label>
       </div>
     </div>
   );
