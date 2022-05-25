@@ -32,7 +32,7 @@ const MyPurchase = () => {
     <tbody>
      
      {
-         purchases.map((purchase,index)=><tr>
+         purchases.map((purchase,index)=><tr key={purchase._id}>
             <th>{index+1}</th>
             <td>{purchase.clientName}</td>
             <td>{purchase.service}</td>

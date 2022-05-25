@@ -172,8 +172,8 @@ const Purchase = () => {
               <input
                 onChange={manageQuantity}
                 type="number"
-                placeholder={MinQuantity}
                 className="input input-bordered"
+                required
               />
             </div>
             <div className="form-control">
@@ -199,6 +199,7 @@ const Purchase = () => {
                 name="phone"
                 placeholder="Phone Number"
                 className="input input-bordered"
+                required
               />
             </div>
             <div className="form-control mt-10">
