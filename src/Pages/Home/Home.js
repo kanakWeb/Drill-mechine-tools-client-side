@@ -4,6 +4,7 @@ import Banner from "./Banner";
 import Services from "./Services";
 import Discount from "./Discount";
 import Summery from "../Home/Summery";
+import ClientReview from "./ClientReview";
 
 
 const Home = () => {
@@ -14,6 +15,7 @@ const Home = () => {
       <Services></Services>
       <Discount></Discount>
       <Elementor></Elementor>
+      <ClientReview></ClientReview>
     </div>
   );
 };

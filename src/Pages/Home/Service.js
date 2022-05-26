@@ -25,20 +25,20 @@ const Service = ({ service }) => {
         <h2 className="card-title">{name}</h2>
         <p>
           <span className="font-bold text-black text-xl">
-            Description :{" "}
-          </span>{" "}
+            Description :
+          </span>
           {des}
         </p>
         <p>
           <span className="font-bold text-black">
             Minimum Quantity :
-          </span>{" "}
+          </span>
           {MinQuantity}
         </p>
         <p>
           <span className="font-bold text-black">
             Available Quantity :
-          </span>{" "}
+          </span>
           {AvailableQuantity}
         </p>
         <p>
