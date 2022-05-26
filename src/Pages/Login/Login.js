@@ -9,6 +9,7 @@ import Loading from "../Share/Loading";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import useToken from "../../hooks/useToken";
 
+
 const Login = () => {
   const [signInWithGoogle, GoogleUser, GoogleLoading, GoogleError] =
     useSignInWithGoogle(auth);
@@ -47,8 +48,7 @@ const Login = () => {
     );
   }
 
-  const onSubmit = (data, event) => {
-    console.log(data);
+  const onSubmit = (data) => {
     signInWithEmailAndPassword(data.email, data.password);
   };
 
