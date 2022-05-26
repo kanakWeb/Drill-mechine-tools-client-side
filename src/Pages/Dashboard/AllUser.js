@@ -4,7 +4,11 @@ import Loading from "../Share/Loading";
 import UserRow from "./UserRow";
 
 const AllUser = () => {
-  const { data: users, isLoading,refetch } = useQuery("users", () =>
+  const {
+    data: users,
+    isLoading,
+    refetch,
+  } = useQuery("users", () =>
     fetch("http://localhost:5000/user", {
       method: "GET",
       headers: {
@@ -20,8 +24,8 @@ const AllUser = () => {
   return (
     <div>
       <h2>All User : {users.length}</h2>
-      <div class="overflow-x-auto">
-        <table class="table w-full">
+      <div className="overflow-x-auto">
+        <table className="table w-full">
           <thead>
             <tr>
               <th></th>

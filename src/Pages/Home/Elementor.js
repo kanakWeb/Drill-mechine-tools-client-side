@@ -6,8 +6,8 @@ import User from "../../Assets/img/user.jpg";
 const Elementor = () => {
   const [user] = useAuthState(auth);
   return (
-    <section className=" flex w-full justify-center items-center mt-20">
-      <div className="w-2/3 flex flex-col bg-white shadow-lg rounded-lg overflow-hidden">
+    <section className=" flex w-full justify-center bg-fuchsia-50 items-center py-20 ">
+      <div className="w-2/3 flex flex-col  shadow-lg rounded-lg overflow-hidden">
         <h2 className="lg:text-3xl text-cyan-500 font-bold text-center py-4 pt-10">
           {" "}
           Comment section

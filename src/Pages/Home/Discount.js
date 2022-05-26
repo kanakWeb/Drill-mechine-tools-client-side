@@ -1,25 +1,19 @@
 import React from "react";
-import background from "../../Assets/img/banner1 (2).jpg";
+import { Link} from "react-router-dom";
+import background from "../../Assets/img/dis.png";
 const Discount = () => {
   return (
-    <div>
-      <div
-        style={{
-          background: `url(${background})`,
-          backgroundSize: "cover",
-        }}
-        className="hero min-h-screen bg-base-200"
-      >
-        <div className="hero-content text-center">
-          <div className="max-w-md">
-            <h1 className="text-5xl font-bold">Hello there</h1>
-            <p className="py-6">
-              Provident cupiditate voluptatem et in. Quaerat fugiat ut
-              assumenda excepturi exercitationem quasi. In deleniti
-              eaque aut repudiandae et a id nisi.
-            </p>
-            <button className="btn btn-primary">Get Started</button>
-          </div>
+    <div className="hero lg:min-h-screen bg-base-200">
+      <div className="hero-content flex-col  lg:flex-row">
+        <img className="mb-[-90px] hidden lg:block" width="700px" src={background} alt="bg" />
+        <div>
+          <h1 className="text-5xl font-bold">
+            We Well Build Your Dream!
+          </h1>
+          <p className="py-6 text-2xl">
+            Plan Perform inspire for discount 40% Repair Build tools in This away
+          </p>
+          <Link to="/service" className="btn btn-primary">Get Started</Link>
         </div>
       </div>
     </div>

@@ -5,8 +5,8 @@ import auth from "../../firebase.init";
 import useAdmin from "../../hooks/useAdmin";
 
 const Dashboard = () => {
-  const [user]=useAuthState(auth)
-  const [admin]=useAdmin(user)
+  const [user] = useAuthState(auth);
+  const [admin] = useAdmin(user);
   return (
     <div className="drawer drawer-mobile">
       <input
@@ -25,15 +25,21 @@ const Dashboard = () => {
         ></label>
         <ul className="menu p-4 overflow-y-auto w-48 bg-base-100 text-base-content">
           {/*  <!-- Sidebar content here --> */}
-          <li>
-            <Link to="/dashboard">My Purchase</Link>
-          </li>
-          <li>
-            <Link to="/dashboard/review">Add Review</Link>
-          </li>
-          {admin&&<li>
-            <Link to="allUser">All User</Link>
-          </li>}
+          {!admin && (
+            <>
+              <li>
+                <Link to="/dashboard">My Purchase</Link>
+              </li>
+              <li>
+                <Link to="/dashboard/review">Add Review</Link>
+              </li>
+            </>
+          )}
+          {admin && (
+            <li>
+              <Link to="allUser">All User</Link>
+            </li>
+          )}
         </ul>
       </div>
     </div>

@@ -129,9 +129,9 @@ const Login = () => {
             </button>
           </form>
           <p>
-            Are you New user ?{" "}
+            Are you New user ?
             <Link className="text-green-500 font-bold" to="/signup">
-              {" "}
+             
               Create a New Account?
             </Link>
           </p>
