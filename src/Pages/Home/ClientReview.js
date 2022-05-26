@@ -8,6 +8,9 @@ const ClientReview = () => {
       .then((data) => setReview(data));
   }, []);
 
+  const toolsCopy = [...reviews];
+  const reversedTools = toolsCopy?.reverse();
+
   return (
     <div className="py-10 bg-gray-400">
       <h2 className="text-2xl font-bold pb-16 text-center">
@@ -15,7 +18,7 @@ const ClientReview = () => {
       </h2>
 
       <div className="grid sm:grid-cols-1  md:grid-cols-2 lg:grid-cols-3 m-5 gap-10">
-        {reviews?.slice(0, -1).map((review) => (
+        {reversedTools?.slice(0,3).map((review) => (
           <div
             key={review._id}
             className="card  bg-base-300 text-neutral-content"

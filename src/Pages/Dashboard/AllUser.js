@@ -18,6 +18,7 @@ const AllUser = () => {
       },
     }).then((res) => res.json())
   );
+
   if (isLoading) {
     return <Loading></Loading>;
   }
@@ -35,7 +36,7 @@ const AllUser = () => {
             </tr>
           </thead>
           <tbody>
-            {users.map((user, index) => (
+            {users?.map((user, index) => (
               <UserRow
                 key={user._id}
                 user={user}

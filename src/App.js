@@ -17,6 +17,9 @@ import AllUser from "./Pages/Dashboard/AllUser";
 import RequireAdmin from "./Pages/Login/RequireAdmin";
 import NotFound from "./Pages/Share/NotFound";
 import Services from "./Pages/Home/Services";
+import MyProfile from "./Pages/Dashboard/MyProfile";
+import AddService from "./Pages/Dashboard/AddService";
+import ManageService from "./Pages/Dashboard/ManageService";
 
 function App() {
   return (
@@ -44,16 +47,36 @@ function App() {
             </RequireAuth>
           }
         >
-          <Route index element={<MyPurchase></MyPurchase>}></Route>
+          <Route index element={<MyProfile></MyProfile>}></Route>
           <Route
             path="review"
             element={<AddReviews></AddReviews>}
+          ></Route>
+          <Route
+            path="myPurchase"
+            element={<MyPurchase></MyPurchase>}
           ></Route>
           <Route
             path="allUser"
             element={
               <RequireAdmin>
                 <AllUser></AllUser>
+              </RequireAdmin>
+            }
+          ></Route>
+          <Route
+            path="addService"
+            element={
+              <RequireAdmin>
+                <AddService></AddService>
+              </RequireAdmin>
+            }
+          ></Route>
+          <Route
+            path="manageService"
+            element={
+              <RequireAdmin>
+                <ManageService></ManageService>
               </RequireAdmin>
             }
           ></Route>

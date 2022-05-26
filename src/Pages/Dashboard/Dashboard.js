@@ -15,7 +15,7 @@ const Dashboard = () => {
         className="drawer-toggle"
       />
       <div className="drawer-content">
-        <h2 className="text-4xl text-green-400">Dashboard</h2>
+        <h2 className="text-4xl font-bold text-cyan-500 text-center my-3">Dashboard</h2>
         <Outlet></Outlet>
       </div>
       <div className="drawer-side">
@@ -23,22 +23,33 @@ const Dashboard = () => {
           htmlFor="dashboard-sidebar"
           className="drawer-overlay"
         ></label>
-        <ul className="menu p-4 overflow-y-auto w-48 bg-base-100 text-base-content">
+        <ul className="menu p-4 overflow-y-auto my-2 w-48 bg-base-100 text-base-content">
           {/*  <!-- Sidebar content here --> */}
+          <li className="m-1">
+            <Link to="/dashboard/">My Profile</Link>
+          </li>
           {!admin && (
             <>
-              <li>
-                <Link to="/dashboard">My Purchase</Link>
+              <li className="m-1">
+                <Link to="/dashboard/myPurchase">My Purchase</Link>
               </li>
-              <li>
+              <li className="m-1">
                 <Link to="/dashboard/review">Add Review</Link>
               </li>
             </>
           )}
           {admin && (
-            <li>
-              <Link to="allUser">All User</Link>
-            </li>
+            <>
+              <li className="m-1">
+                <Link to="/dashboard/allUser">All User</Link>
+              </li>
+              <li className="m-1">
+                <Link to="/dashboard/addService">Add  Service</Link>
+              </li>
+              <li className="m-1">
+                <Link to="/dashboard/manageService">Manage Service</Link>
+              </li>
+            </>
           )}
         </ul>
       </div>
