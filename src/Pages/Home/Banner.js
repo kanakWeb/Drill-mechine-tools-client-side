@@ -9,7 +9,7 @@ const Banner = () => {
             background: `url(${backgroundImg})`,
             backgroundSize: "cover",
           }}
-         className="hero min-h-screen">
+         className="hero lg:min-h-screen">
   <div className="hero-overlay bg-opacity-60"></div>
   <div className="hero-content text-center text-white">
     <div className="max-w-5xl bg-slate-500 py-10 rounded-lg bg-opacity-10 ">

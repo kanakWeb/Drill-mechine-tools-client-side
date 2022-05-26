@@ -19,7 +19,7 @@ const Purchase = () => {
     des,
   } = service;
   useEffect(() => {
-    const url = `http://localhost:5000/service/${serviceId}`;
+    const url = `https://shielded-chamber-56561.herokuapp.com/service/${serviceId}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
@@ -71,7 +71,7 @@ const Purchase = () => {
       phone: event.target.phone.value,
     };
 
-    fetch("http://localhost:5000/purchase", {
+    fetch("https://shielded-chamber-56561.herokuapp.com/purchase", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -89,9 +89,9 @@ const Purchase = () => {
   };
 
   return (
-    <div className="card m-2 lg:card-side g-4  shadow-xl">
+    <div className="card m-2  lg:card-side g-4  shadow-xl">
       <figure>
-        <div className="card w-96 bg-base-300 shadow-xl">
+        <div className="card w-96 bg-base-300 mt-8 shadow-xl">
           <figure className="px-10 pt-10">
             <img src={img} alt="Shoes" className="rounded-xl" />
           </figure>

@@ -5,7 +5,7 @@ import Success from "../../Assets/img/success.jpg";
 
 const Summery = () => {
   return (
-    <div className="grid sm:grid-cols-1 bg-orange-50 md:grid-cols-2 lg:grid-cols-3 py-20 gap-10">
+    <div className="grid sm:grid-cols-1 bg-orange-50 md:grid-cols-2 lg:grid-cols-3 m-5 py-20 gap-10">
       <div className="card  bg-base-100 shadow-xl image-full">
         <figure>
           <img src={Country} alt="country" />

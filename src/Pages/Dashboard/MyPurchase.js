@@ -11,7 +11,7 @@ const MyPurchase = () => {
   useEffect(() => {
     if (user) {
       fetch(
-        `http://localhost:5000/purchase?clientEmail=${user?.email}`,
+        `https://shielded-chamber-56561.herokuapp.com/purchase?clientEmail=${user?.email}`,
         {
           method: "GET",
           headers: {
