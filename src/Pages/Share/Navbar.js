@@ -24,7 +24,7 @@ const Navbar = () => {
         <Link to="/blog">Blog</Link>
       </li>
       <li>
-        <Link to="/myPortfolio">My Portfolio</Link>
+        <Link to="/myPortfolio">Portfolio</Link>
       </li>
       {user && (
         <li>
@@ -36,7 +36,7 @@ const Navbar = () => {
           <>
             <div>
               <li>
-                <Link to="/dashboard/">{user.displayName}</Link>
+                <Link to="/dashboard/">{user.displayName.slice(0,7)}.</Link>
               </li>
             </div>
             <div>

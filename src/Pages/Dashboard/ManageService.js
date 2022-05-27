@@ -1,13 +1,27 @@
+import { signOut } from "firebase/auth";
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { useNavigate } from "react-router-dom";
+import auth from "../../firebase.init";
 import useService from "../../hooks/useService";
 
 const ManageService = () => {
+  const [user] = useAuthState(auth);
   const [service] = useService();
+
+  const navigate = useNavigate();
+  
+
+  if (!user) {
+    signOut(auth);
+    localStorage.removeItem("accessToken");
+    navigate("/");
+  }
+
+
   return (
     <div className="py-5">
-      <h2 className="">
-        Services : {service.length}
-      </h2>
+      <h2 className="">Services : {service.length}</h2>
       <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 m-5 my-40 gap-10">
         {service.map((service) => (
           <div className="card lg:max-w-lg  shadow-xl">
@@ -40,7 +54,7 @@ const ManageService = () => {
               </p>
               <div className="card-actions justify-center">
                 <button className="btn bg-gradient-to-r border-0 from-orange-600 to-blue-600 btn-wide text-white font-bold">
-                 Delete
+                  Delete
                 </button>
               </div>
             </div>

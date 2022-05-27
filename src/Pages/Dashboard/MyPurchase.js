@@ -33,7 +33,7 @@ const MyPurchase = () => {
           setPurchases(data);
         });
     }
-  }, [user]);
+  }, []);
   return (
     <div>
       <h2>MyPurchase :{purchases.length}</h2>
@@ -61,16 +61,22 @@ const MyPurchase = () => {
                   {purchase.servicePrice && !purchase.paid && (
                     <Link to={`/dashboard/payment/${purchase._id}`}>
                       <button className="btn btn-xs btn-success">
-                        Pay
+                        pay
                       </button>
                     </Link>
                   )}
-                  {purchase.servicePrice && !purchase.paid && (
-                    
-                      <span className="btn btn-xs text-success">
-                        Paid
-                      </span>
-                    
+                  {purchase.servicePrice && purchase.paid && (
+                    <div>
+                      <p>
+                        <span className="text-success">Paid</span>
+                      </p>
+                      <p>
+                        Transaction id:{" "}
+                        <span className="text-success">
+                          {purchase.transactionId}
+                        </span>
+                      </p>
+                    </div>
                   )}
                 </td>
               </tr>

@@ -12,10 +12,13 @@ const CheckoutForm = ({ purchase }) => {
   const elements = useElements();
 
   const [cardError, setCardError] = useState("");
+  const [success, setSuccess] = useState("");
+  const [processing, setProcessing] = useState(false);
+  const [transactionId, setTransactionId] = useState("");
 
   const [clientSecret, setClientSecret] = useState("");
 
-  const { servicePrice } = purchase;
+  const { _id, servicePrice, clientEmail, clientName } = purchase;
   console.log(servicePrice);
   useEffect(() => {
     if (servicePrice) {
@@ -58,6 +61,52 @@ const CheckoutForm = ({ purchase }) => {
     );
 
     setCardError(error?.message || "");
+
+    setSuccess("");
+    setProcessing(true);
+    //payment confirm
+    const { paymentIntent, error: intentError } =
+      await stripe.confirmCardPayment(clientSecret, {
+        payment_method: {
+          card: card,
+          billing_details: {
+            name: clientName,
+            email: clientEmail,
+          },
+        },
+      });
+    if (intentError) {
+      setProcessing(false);
+      setCardError(intentError.message);
+    } else {
+      console.log(paymentIntent);
+      setTransactionId(paymentIntent.id);
+      setCardError("");
+      setSuccess("Congrats! Your payment is completed");
+
+      ///
+
+      const payment = {
+        purchases: _id,
+        transactionId: paymentIntent.id
+      };
+
+      fetch(`http://localhost:5000/purchase/${_id}`, {
+        method: "PATCH",
+        headers: {
+          "content-type": "application/json",
+          authorization: `Bearer ${localStorage.getItem(
+            "accessToken"
+          )}`,
+        },
+        body: JSON.stringify({ payment }),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          setProcessing(false);
+          console.log(data);
+        });
+    }
   };
 
   return (
@@ -88,6 +137,15 @@ const CheckoutForm = ({ purchase }) => {
         </button>
       </form>
       {cardError && <p className="text-red-500">{cardError}</p>}
+      {success && (
+        <div className="text-green-500">
+          {success}
+          <p>
+            Your transaction Id :{" "}
+            <span className="text-orange-500">{transactionId}</span>{" "}
+          </p>{" "}
+        </div>
+      )}
     </>
   );
 };
