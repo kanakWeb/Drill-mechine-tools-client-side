@@ -7,7 +7,7 @@ const MyProfile = () => {
   const [user] = useAuthState(auth);
 
   return (
-    <div class="flex justify-center items-center bg-blue-200 min-h-screen">
+    <div class="flex justify-center items-center bg-base-300 min-h-screen">
       <div class="h-auto sm:w-96 w-[320px] transition-all bg-white rounded-lg overflow-hidden">
         <div class="h-60 w-full  flex justify-center items-center">
           <div class="avatar">

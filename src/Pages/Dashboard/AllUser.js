@@ -29,10 +29,10 @@ const AllUser = () => {
         <table className="table w-full">
           <thead>
             <tr>
-              <th></th>
+              <th>S/N</th>
               <th>Email</th>
-              <th>Job</th>
-              <th>Favorite Color</th>
+              <th>Admin Access</th>
+              <th>Remove Admin</th>
             </tr>
           </thead>
           <tbody>
