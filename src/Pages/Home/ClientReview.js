@@ -12,7 +12,7 @@ const ClientReview = () => {
   const reversedTools = toolsCopy?.reverse();
 
   return (
-    <div className="py-10 bg-gray-400">
+    <div className="py-10 ">
       <h2 className="text-2xl font-bold pb-16 text-center">
         Review- {reviews.length}
       </h2>

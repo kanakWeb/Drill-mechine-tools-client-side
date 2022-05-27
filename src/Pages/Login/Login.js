@@ -9,7 +9,6 @@ import Loading from "../Share/Loading";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import useToken from "../../hooks/useToken";
 
-
 const Login = () => {
   const [signInWithGoogle, GoogleUser, GoogleLoading, GoogleError] =
     useSignInWithGoogle(auth);
@@ -18,6 +17,7 @@ const Login = () => {
     register,
     formState: { errors },
     handleSubmit,
+    reset,
   } = useForm();
 
   const [signInWithEmailAndPassword, user, loading, error] =
@@ -50,6 +50,7 @@ const Login = () => {
 
   const onSubmit = (data) => {
     signInWithEmailAndPassword(data.email, data.password);
+    reset();
   };
 
   return (
@@ -131,7 +132,6 @@ const Login = () => {
           <p>
             Are you New user ?
             <Link className="text-green-500 font-bold" to="/signup">
-             
               Create a New Account?
             </Link>
           </p>

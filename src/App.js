@@ -20,6 +20,7 @@ import Services from "./Pages/Home/Services";
 import MyProfile from "./Pages/Dashboard/MyProfile";
 import AddService from "./Pages/Dashboard/AddService";
 import ManageService from "./Pages/Dashboard/ManageService";
+import MyPortfolio from "./Pages/MyPortfolio";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
         <Route path="blog" element={<Blog></Blog>}></Route>
         <Route path="login" element={<Login></Login>}></Route>
         <Route path="signup" element={<Signup></Signup>}></Route>
+        <Route path="myPortfolio" element={<MyPortfolio></MyPortfolio>}></Route>
         <Route
           path="/service/:serviceId"
           element={

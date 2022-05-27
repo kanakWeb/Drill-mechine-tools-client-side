@@ -11,7 +11,7 @@ const Navbar = () => {
 
   const logout = () => {
     signOut(auth);
-    /* navigate("/login"); */
+    navigate("/login"); 
     localStorage.removeItem("accessToken");
   };
 
@@ -23,6 +23,9 @@ const Navbar = () => {
       <li>
         <Link to="/blog">Blog</Link>
       </li>
+      <li>
+        <Link to="/myPortfolio">My Portfolio</Link>
+      </li>
       {user && (
         <li>
           <Link to="/dashboard">DashBoard</Link>
@@ -32,7 +35,9 @@ const Navbar = () => {
         {user ? (
           <>
             <div>
-              <li >{user.displayName}</li>
+              <li>
+                <Link to="/dashboard/">{user.displayName}</Link>
+              </li>
             </div>
             <div>
               <li onClick={logout}>LogOut</li>

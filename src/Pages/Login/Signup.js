@@ -18,8 +18,7 @@ const Signup = () => {
   const {
     register,
     formState: { errors },
-    handleSubmit,
-  } = useForm();
+    handleSubmit,reset} = useForm();
 
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
@@ -54,7 +53,7 @@ const [token]=useToken(user || GoogleUser)
   const onSubmit = async (data) => {
     await createUserWithEmailAndPassword(data.email, data.password);
     await updateProfile({ displayName: data.name });
-    
+    reset()
   };
   return (
     <div className="flex h-screen justify-center items-center">
