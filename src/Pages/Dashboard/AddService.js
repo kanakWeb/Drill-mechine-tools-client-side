@@ -31,7 +31,7 @@ const AddService = () => {
             name: data.name,
             des: data.des,
             MinQuantity: data.MinQuantity,
-            AvailableQuantity: data.AvailableQuantity,
+            AvailableQuantity: data.MinQuantity,
             price: 900,
             img: img,
           };
@@ -49,8 +49,13 @@ const AddService = () => {
             body: JSON.stringify(serviceData),
           })
             .then((res) => res.json())
-            .then((AddData) => {
-              console.log("addData", AddData);
+            .then((inserted) => {
+              if (inserted.insertedId) {
+                toast.success("SuccessFully added ");
+                reset();
+              } else {
+                toast.error("Not a added service");
+              }
             });
         }
       });

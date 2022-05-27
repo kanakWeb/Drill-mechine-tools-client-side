@@ -21,6 +21,8 @@ import MyProfile from "./Pages/Dashboard/MyProfile";
 import AddService from "./Pages/Dashboard/AddService";
 import ManageService from "./Pages/Dashboard/ManageService";
 import MyPortfolio from "./Pages/MyPortfolio";
+import AllOrder from "./Pages/Dashboard/AllOrder";
+import Payment from "./Pages/Dashboard/Payment";
 
 function App() {
   return (
@@ -55,6 +57,10 @@ function App() {
             element={<AddReviews></AddReviews>}
           ></Route>
           <Route
+            path="payment/:id"
+            element={<Payment></Payment>}
+          ></Route>
+          <Route
             path="myPurchase"
             element={<MyPurchase></MyPurchase>}
           ></Route>
@@ -79,6 +85,14 @@ function App() {
             element={
               <RequireAdmin>
                 <ManageService></ManageService>
+              </RequireAdmin>
+            }
+          ></Route>
+          <Route
+            path="allOrder"
+            element={
+              <RequireAdmin>
+                <AllOrder></AllOrder>
               </RequireAdmin>
             }
           ></Route>
