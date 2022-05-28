@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
+import { toast } from "react-toastify";
 
 const MyPurchase = () => {
   const [user] = useAuthState(auth);
@@ -33,7 +34,24 @@ const MyPurchase = () => {
           setPurchases(data);
         });
     }
-  }, []);
+  }, [purchases]);
+
+  const handleDelete = (id) => {
+    const deleteItem = window.confirm("Are You sure?");
+
+    if (deleteItem) {
+      const url = `https://shielded-chamber-56561.herokuapp.com/purchase/${id}`;
+      fetch(url, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          toast("Purchase service deleted");
+          console.log(data);
+        });
+    }
+  };
+
   return (
     <div>
       <h2>MyPurchase :{purchases.length}</h2>
@@ -59,22 +77,24 @@ const MyPurchase = () => {
                 <td>{purchase.servicePrice}</td>
                 <td>
                   {purchase.servicePrice && !purchase.paid && (
-                    <Link to={`/dashboard/payment/${purchase._id}`}>
-                      <button className="btn btn-xs btn-success">
-                        pay
+                    <>
+                      <Link to={`/dashboard/payment/${purchase._id}`}>
+                        <button className="btn btn-xs btn-success">
+                          pay
+                        </button>
+                      </Link>
+                      <button
+                        onClick={() => handleDelete(purchase._id)}
+                        className="btn btn-xs btn-secondary mx-1"
+                      >
+                        Delete
                       </button>
-                    </Link>
+                    </>
                   )}
                   {purchase.servicePrice && purchase.paid && (
                     <div>
                       <p>
                         <span className="text-success">Paid</span>
-                      </p>
-                      <p>
-                        Transaction id:{" "}
-                        <span className="text-success">
-                          {purchase.transactionId}
-                        </span>
                       </p>
                     </div>
                   )}

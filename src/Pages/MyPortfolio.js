@@ -3,22 +3,22 @@ import Portfolio from "../Assets/img/protfolio.jpg";
 const MyPortfolio = () => {
   return (
     <div className=" py-8 bg-base-300 ">
-      <div class="  flex justify-center items-center">
-        <div class="container-fluid p-3 md:p-5">
-          <figure class="md:flex bg-white rounded-xl p-2 md:p-0 overflow-hidden">
+      <div className="  flex justify-center items-center">
+        <div className="container-fluid p-3 md:p-5">
+          <figure className="md:flex bg-white rounded-xl p-2 md:p-0 overflow-hidden">
             <img
-              class="w-32 h-32 md:w-48 md:h-auto md:rounded-none rounded-full mx-auto"
+              className="w-32 h-32 md:w-48 md:h-auto md:rounded-none rounded-full mx-auto"
               src={Portfolio}
               alt=""
               width="384"
               height="512"
             />
-            <div class=" md:p-8 text-center md:text-left space-y-4">
+            <div className=" md:p-8 text-center md:text-left space-y-4">
               <blockquote>
-              <div class="text-green-700 text-2xl py-4 font-bold">
+                <div className="text-green-700 text-2xl py-4 font-bold">
                   Kanak Chandra
                 </div>
-                <p class="text-lg font-semibold">
+                <p className="text-lg font-semibold">
                   I’m a graduate student at Daffodil International
                   University, Dhaka Bangladesh majoring in Computer
                   Science and Engineering. I have some technical and
@@ -29,9 +29,11 @@ const MyPortfolio = () => {
                   and learn from other experienced team members.
                 </p>
               </blockquote>
-              <figcaption class="font-medium">
-                <div class="text-cyan-600 text-xl">Email : kanakchandra143@gmail.com</div>
-                <div class="text-gray-500">
+              <figcaption className="font-medium">
+                <div className="text-cyan-600 text-xl">
+                  Email : kanakchandra143@gmail.com
+                </div>
+                <div className="text-gray-500">
                   Software Designer & Developer
                 </div>
               </figcaption>
@@ -101,7 +103,7 @@ const MyPortfolio = () => {
             https://fresh-fruits-f5235.web.app)
           </span>
           <span className="text-md mx-1 my-1 font-bold  text-cyan-600 rounded-full py-1/2 px-2">
-            3.(drill machine tools) Manufecture--
+            3.(Drill machine tools) Manufecture--
             (https://drill-machine-tools.web.app)
           </span>
         </div>

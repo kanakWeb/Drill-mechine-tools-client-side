@@ -38,16 +38,19 @@ const AddService = () => {
 
           //send service
 
-          fetch("http://localhost:5000/addService", {
-            method: "POST",
-            headers: {
-              "content-type": "application/json",
-              authorization: `Bearer ${localStorage.getItem(
-                "accessToken"
-              )}`,
-            },
-            body: JSON.stringify(serviceData),
-          })
+          fetch(
+            "https://shielded-chamber-56561.herokuapp.com/addService",
+            {
+              method: "POST",
+              headers: {
+                "content-type": "application/json",
+                authorization: `Bearer ${localStorage.getItem(
+                  "accessToken"
+                )}`,
+              },
+              body: JSON.stringify(serviceData),
+            }
+          )
             .then((res) => res.json())
             .then((inserted) => {
               if (inserted.insertedId) {

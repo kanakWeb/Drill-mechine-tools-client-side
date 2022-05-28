@@ -36,7 +36,7 @@ const Navbar = () => {
           <>
             <div>
               <li>
-                <Link to="/dashboard/">{user.displayName.slice(0,7)}.</Link>
+                <Link to="/dashboard/">{user?.displayName?.slice(0,7)}.</Link>
               </li>
             </div>
             <div>

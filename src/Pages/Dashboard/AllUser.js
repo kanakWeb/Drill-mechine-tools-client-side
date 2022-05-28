@@ -32,7 +32,7 @@ const AllUser = () => {
               <th>S/N</th>
               <th>Email</th>
               <th>Admin Access</th>
-              <th>Remove Admin</th>
+              
             </tr>
           </thead>
           <tbody>

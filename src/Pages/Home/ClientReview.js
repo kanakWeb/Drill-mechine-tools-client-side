@@ -18,7 +18,7 @@ const ClientReview = () => {
       </h2>
 
       <div className="grid sm:grid-cols-1  md:grid-cols-2 lg:grid-cols-3 m-5 gap-10">
-        {reversedTools?.slice(0,3).map((review) => (
+        {reversedTools?.slice(0, 3).map((review) => (
           <div
             key={review._id}
             className="card  bg-base-300 text-neutral-content"
@@ -46,14 +46,13 @@ const ClientReview = () => {
 };
 
 export default ClientReview;
-   
 
-/* <div class="carousel w-full">
-  <div id="slide1" class="carousel-item relative w-full">
-    <img src="https://api.lorem.space/image/car?w=800&h=200&hash=8B7BCDC2" class="w-full" />
-    <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-      <a href="#slide4" class="btn btn-circle">❮</a> 
-      <a href="#slide2" class="btn btn-circle">❯</a>
+/* <div className="carousel w-full">
+  <div id="slide1" className="carousel-item relative w-full">
+    <img src="https://api.lorem.space/image/car?w=800&h=200&hash=8B7BCDC2" className="w-full" />
+    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+      <a href="#slide4" className="btn btn-circle">❮</a> 
+      <a href="#slide2" className="btn btn-circle">❯</a>
     </div>
   </div> 
 

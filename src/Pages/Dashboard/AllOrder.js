@@ -4,14 +4,14 @@ const AllOrder = () => {
   //allPurchase
   const [allPurchase, setAllPurchase] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/allPurchase")
+    fetch("https://shielded-chamber-56561.herokuapp.com/allPurchase")
       .then((res) => res.json())
       .then((data) => setAllPurchase(data));
   }, []);
 
   return (
-    <div class="  overflow-x-auto">
-      <table class="table  w-full">
+    <div className="  overflow-x-auto">
+      <table className="table  w-full">
         <thead>
           <tr>
             <th>S/N</th>
@@ -23,9 +23,9 @@ const AllOrder = () => {
           </tr>
         </thead>
         <tbody>
-          {allPurchase.map((p,index) => (
+          {allPurchase.map((p, index) => (
             <tr key={p._id}>
-              <th>{index+1}</th>
+              <th>{index + 1}</th>
               <td>{p.service}</td>
               <td>{p.clientName}</td>
               <td>{p.clientEmail}</td>

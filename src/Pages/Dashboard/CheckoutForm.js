@@ -22,16 +22,19 @@ const CheckoutForm = ({ purchase }) => {
   console.log(servicePrice);
   useEffect(() => {
     if (servicePrice) {
-      fetch("http://localhost:5000/create-payment-intent", {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-          authorization: `Bearer ${localStorage.getItem(
-            "accessToken"
-          )}`,
-        },
-        body: JSON.stringify({ servicePrice }),
-      })
+      fetch(
+        "https://shielded-chamber-56561.herokuapp.com/create-payment-intent",
+        {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+            authorization: `Bearer ${localStorage.getItem(
+              "accessToken"
+            )}`,
+          },
+          body: JSON.stringify({ servicePrice }),
+        }
+      )
         .then((res) => res.json())
         .then((data) => {
           if (data?.clientSecret) {
@@ -88,19 +91,22 @@ const CheckoutForm = ({ purchase }) => {
 
       const payment = {
         purchases: _id,
-        transactionId: paymentIntent.id
+        transactionId: paymentIntent.id,
       };
 
-      fetch(`http://localhost:5000/purchase/${_id}`, {
-        method: "PATCH",
-        headers: {
-          "content-type": "application/json",
-          authorization: `Bearer ${localStorage.getItem(
-            "accessToken"
-          )}`,
-        },
-        body: JSON.stringify({ payment }),
-      })
+      fetch(
+        `https://shielded-chamber-56561.herokuapp.com/purchase/${_id}`,
+        {
+          method: "PATCH",
+          headers: {
+            "content-type": "application/json",
+            authorization: `Bearer ${localStorage.getItem(
+              "accessToken"
+            )}`,
+          },
+          body: JSON.stringify({ payment }),
+        }
+      )
         .then((res) => res.json())
         .then((data) => {
           setProcessing(false);

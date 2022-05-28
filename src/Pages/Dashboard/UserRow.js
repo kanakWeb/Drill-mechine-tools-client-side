@@ -45,11 +45,7 @@ const UserRow = ({ user, index, refetch }) => {
           </button>
         )}
       </td>
-      <td>
-        <button className="btn btn-secondary btn-xs">
-          Remove Admin
-        </button>
-      </td>
+      
     </tr>
   );
 };
