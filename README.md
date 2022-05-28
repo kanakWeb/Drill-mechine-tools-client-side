@@ -1,70 +1,70 @@
-# Getting Started with Create React App
+# Drill Machine Tools Project Requirements
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Super Hand Tools is a React Web App powered by Live Site [Drill Machine Tools](https://drill-machine-tools.web.app)
 
-## Available Scripts
+## Total Pages: 07
 
-In the project directory, you can run:
+1.  Homepage
+2.  Blogs Page
+3.  Service Page
+4.  Portfolio Page
+5.  DashBoard Page
+6.  Authentication Page
+7.  404 Not Found Page
 
-### `npm start`
+## DashBoard Pages: Admin
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- MyProfile page.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Make a Admin Page.
 
-### `npm test`
+- All Purchase Page.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Add Service page.
 
-### `npm run build`
+- Manage Service page.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## DashBoard Pages: User
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- MyProfile page.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- MyPurchase page.
 
-### `npm run eject`
+- Add Review.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Tech Stack:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1.  React [</ Documentation>](https://reactjs.org/docs/getting-started.html)
+2.  Tailwind CSS [</ Documentation>](https://tailwindcss.com/docs/installation)
+3.  React Router Dom [</ Documentation>](https://reactrouter.com/docs/en/v6/getting-started/overview)
+4.  FireBase [</ Documentation>](https://console.firebase.google.com)
+5.  React-Helmet [</ Documentation>](https://www.npmjs.com/package/react-helmet-async)
+6.  React-Hook-From [</ Documentation>](https://react-hook-form.com/get-started#Integratinganexistingform)
+7.  jsonwebtoken [</ Documentation>](https://jwt.io)
+8.  react-query [</ Documentation>](https://react-query.tanstack.com/)
+9.  Heroku[</ Documentation>](https://devcenter.heroku.com)
+10. Stripe[</ Documentation>](https://dashboard.stripe.com)
+11. ImageBB[</ Documentation>](https://api.imgbb.com/)
+12. Daisy-UI[</ Documentation>](https://daisyui.com/)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Project Description
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Super hand Tools manufacturing service.
+-  show in this Drill Tools manufacturing if the user Sign In .
+-  show in this Super hand Tools manufacturing website if the user is not Sign up/Sign in.
+- Home page mainly show the amazing banner and the Update and some of the new Service.
+- Blogs show the some of the information.
+- Service Page show all the Service.
+- MyPortfolio Page show My Information.
+- Dashboard Page mainly see if the user admin myProfile,AddService,ManageService and order status Changes .
+- Dashboard Page mainly see if the user user my profile,addReview,MyPurchase.
 
-## Learn More
+## Using System
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Fist if you signUp /SignIn.
+- See all the Update in the home page.
+- Add the new Item in the AddItem section.
+- Update the any if you want so click the button in the any property.
+- If Delete any Item so go tpo the products section and click the Delete icon.
+- Use Json Web Token for the secure our website.
+- Authentication is also use and add email verification for the more secure the app.

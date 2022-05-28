@@ -1,14 +1,14 @@
 import React from "react";
-
+import Portfolio from "../Assets/img/protfolio.jpg";
 const MyPortfolio = () => {
   return (
-    <div>
-      <div class="bg-base-300 h-screen flex justify-center items-center">
+    <div className=" py-20 bg-base-300 ">
+      <div class="  flex justify-center items-center">
         <div class="container-fluid p-3 md:p-32">
           <figure class="md:flex bg-white rounded-xl p-8 md:p-0 overflow-hidden">
             <img
               class="w-32 h-32 md:w-48 md:h-auto md:rounded-none rounded-full mx-auto"
-              src="https://i.imgur.com/rvQ3LAt.jpg"
+              src={Portfolio}
               alt=""
               width="384"
               height="512"
@@ -16,30 +16,91 @@ const MyPortfolio = () => {
             <div class="pt-6 md:p-8 text-center md:text-left space-y-4">
               <blockquote>
                 <p class="text-lg font-semibold">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing
-                  elit, sed do eiusmod tempor incididunt ut labore et
-                  dolore magna aliqua. Ut enim ad minim veniam, quis
-                  nostrud exercitation ullamco laboris nisi ut aliquip
-                  ex ea commodo consequat.
+                  I’m a graduate student at Daffodil International
+                  University, Dhaka Bangladesh majoring in Computer
+                  Science and Engineering. I have some technical and
+                  analytical skills acquired by pursing my degree also
+                  have some knowledge working across the Font-end web
+                  development proficient in front end. I’m looking for
+                  a role where I can contribute my knowledge also grow
+                  and learn from other experienced team members.
                 </p>
               </blockquote>
               <figcaption class="font-medium">
-                <div class="text-cyan-600">Timona Siyali</div>
+                <div class="text-cyan-600 text-xl">Kanak Chandra</div>
                 <div class="text-gray-500">
-                  Software Developer, Google
-                </div>
-                <div class="mt-3">
-                  <i
-                    class="fa fa-facebook text-blue-900 text-xl
-          mr-2"
-                  ></i>
-                  <i class="fa fa-twitter text-blue-300 text-xl mr-2"></i>
-                  <i class="fa fa-linkedin text-blue-900 text-xl mr-2"></i>
-                  <i class="fa fa-instagram text-red-700 text-xl"></i>
+                  Software Designer & Developer
                 </div>
               </figcaption>
             </div>
           </figure>
+        </div>
+      </div>
+      <div className="rounded-lg shadow-lg border-amber-300 shadow-amber-50 border-2 px-4 py-8 my-4 mx-8">
+        <span className="space-y-2 font-bold text-2xl text-blue-600 mt-16">
+          Skill :
+        </span>
+        <div className="flex flex-wrap">
+          <span className="text-md mx-1 my-1  font-bold text-white bg-cyan-600 rounded-full py-1/2 px-2">
+            Basic c
+          </span>
+          <span className="text-md mx-1 my-1 font-bold text-white bg-blue-600 rounded-full py-1/2 px-2">
+            HTml
+          </span>
+          <span className="text-md mx-1 my-1 font-bold text-white bg-orange-600 rounded-full py-1/2 px-2">
+            CSS
+          </span>
+          <span className="text-md mx-1 my-1 font-bold text-white bg-green-600 rounded-full py-1/2 px-2">
+            Bootstrap-5
+          </span>
+          <span className="text-md mx-1 my-1 font-bold text-white bg-gray-600 rounded-full py-1/2 px-2">
+            Tailwind-CS
+          </span>
+          <span className="text-md mx-1 my-1 font-bold text-white bg-yellow-600 rounded-full py-1/2 px-2">
+            Git
+          </span>
+          <span className="text-md mx-1 my-1 font-bold text-white bg-cyan-600 rounded-full py-1/2 px-2">
+            GitHub
+          </span>
+          <span className="text-md mx-1 my-1 font-bold text-white bg-red-600 rounded-full py-1/2 px-2">
+            Netlify
+          </span>
+          <span className="text-md mx-1 my-1 font-bold text-white bg-yellow-400 rounded-full py-1/2 px-2">
+            Java Scrip
+          </span>
+          <span className="text-md mx-1 my-1 font-bold text-white bg-pink-600 rounded-full py-1/2 px-2">
+            ES6
+          </span>
+          <span className="text-md mx-1 my-1 font-bold text-white bg-black rounded-full py-1/2 px-2">
+            API
+          </span>
+          <span className="text-md mx-1 my-1 font-bold text-white bg-cyan-600 rounded-full py-1/2 px-2">
+            Figma
+          </span>
+          <span className="text-md mx-1 my-1 font-bold text-white bg-green-400 rounded-full py-1/2 px-2">
+            React-(component base)
+          </span>
+          <span className="text-md mx-1 my-1 font-bold text-white bg-blue-600 rounded-full py-1/2 px-2">
+            Firebase,Mongodb,some, -NodeJs
+          </span>
+        </div>
+      </div>
+      <div className="rounded-lg shadow-lg border-blue-300 shadow-amber-50 border-2 px-4 py-8 my-4 mx-8">
+        <span className="space-y-2 font-bold text-2xl text-blue-600 mt-16">
+          Project link :
+        </span>
+        <div className="flex flex-col">
+          <span className="text-md mx-1 my-1 mt-3 font-bold  text-cyan-600 rounded-full py-1/2 px-2">
+            1.Mr-tutor-- (https://mr-tutor-e4f3b.web.app)
+          </span>
+          <span className="text-md mx-1 my-2 font-bold  text-cyan-600 rounded-full py-1/2 px-2">
+            2.Fresh-Fruits WearHouse--(
+            https://fresh-fruits-f5235.web.app)
+          </span>
+          <span className="text-md mx-1 my-1 font-bold  text-cyan-600 rounded-full py-1/2 px-2">
+            3.(drill machine tools) Manufecture--
+            (https://drill-machine-tools.web.app)
+          </span>
         </div>
       </div>
     </div>
