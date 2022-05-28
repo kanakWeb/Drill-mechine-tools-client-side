@@ -97,7 +97,7 @@ const Navbar = () => {
             {menuItems}
           </ul>
         </div>
-        <a className="btn btn-ghost font-bold text-cyan-500 upper-case lg:text-2xl">
+        <a className="btn btn-ghost font-bold text-cyan-500 upper-case text-lg lg:text-2xl">
           Drill Machine Tools
         </a>
       </div>

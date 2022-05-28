@@ -15,10 +15,10 @@ const MyPortfolio = () => {
             />
             <div className=" md:p-8 text-center md:text-left space-y-4">
               <blockquote>
-                <div className="text-green-700 text-2xl py-4 font-bold">
+                <div className="text-green-700 text-lg lg:text-2xl py-4 font-bold">
                   Kanak Chandra
                 </div>
-                <p className="text-lg font-semibold">
+                <p className="lg:text-lg text-sm font-semibold">
                   I’m a graduate student at Daffodil International
                   University, Dhaka Bangladesh majoring in Computer
                   Science and Engineering. I have some technical and
@@ -30,7 +30,7 @@ const MyPortfolio = () => {
                 </p>
               </blockquote>
               <figcaption className="font-medium">
-                <div className="text-cyan-600 text-xl">
+                <div className="text-cyan-600 lg:text-xl">
                   Email : kanakchandra143@gmail.com
                 </div>
                 <div className="text-gray-500">

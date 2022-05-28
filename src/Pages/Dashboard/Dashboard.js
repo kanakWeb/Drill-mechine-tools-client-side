@@ -17,7 +17,7 @@ const Dashboard = () => {
         className="drawer-toggle"
       />
       <div className="drawer-content">
-        <h2 className="text-4xl font-bold text-cyan-500 text-center my-3">Dashboard</h2>
+        <h2 className="lg:text-4xl font-bold text-cyan-500 text-center my-3">Dashboard</h2>
         <Outlet></Outlet>
       </div>
       <div className="drawer-side">

@@ -9,8 +9,8 @@ const MyProfile = () => {
   return (
     <div className="flex justify-center items-center bg-base-300 min-h-screen">
       <div className="h-auto sm:w-96 w-[320px] transition-all bg-white rounded-lg overflow-hidden">
-        <div className="h-60 w-full  flex justify-center items-center">
-          <div className="avatar">
+        <div className="h-60 w-full md:my-3 sm:my-3 flex justify-center items-center">
+          <div className="avatar ">
             <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
               <img
                 src={
@@ -23,7 +23,7 @@ const MyProfile = () => {
             </div>
           </div>
         </div>
-        <div className="md:-mt-12 -mt-24 px-4 ">
+        <div className="md:-mt-12 -mt-18 px-4 ">
           <p className="text-2xl text-blue-600 font-semibold">
             Name :{" "}
             <span className="text-xl text-green-500">
