@@ -2,10 +2,10 @@ import React from "react";
 import Portfolio from "../Assets/img/protfolio.jpg";
 const MyPortfolio = () => {
   return (
-    <div className=" py-20 bg-base-300 ">
+    <div className=" py-10 bg-base-300 ">
       <div class="  flex justify-center items-center">
         <div class="container-fluid p-3 md:p-32">
-          <figure class="md:flex bg-white rounded-xl p-8 md:p-0 overflow-hidden">
+          <figure class="md:flex bg-white rounded-xl p-2 md:p-0 overflow-hidden">
             <img
               class="w-32 h-32 md:w-48 md:h-auto md:rounded-none rounded-full mx-auto"
               src={Portfolio}
@@ -13,8 +13,11 @@ const MyPortfolio = () => {
               width="384"
               height="512"
             />
-            <div class="pt-6 md:p-8 text-center md:text-left space-y-4">
+            <div class=" md:p-8 text-center md:text-left space-y-4">
               <blockquote>
+              <div class="text-green-700 text-2xl py-4 font-bold">
+                  Kanak Chandra
+                </div>
                 <p class="text-lg font-semibold">
                   I’m a graduate student at Daffodil International
                   University, Dhaka Bangladesh majoring in Computer
@@ -27,7 +30,7 @@ const MyPortfolio = () => {
                 </p>
               </blockquote>
               <figcaption class="font-medium">
-                <div class="text-cyan-600 text-xl">Kanak Chandra</div>
+                <div class="text-cyan-600 text-xl">Email : kanakchandra143@gmail.com</div>
                 <div class="text-gray-500">
                   Software Designer & Developer
                 </div>
