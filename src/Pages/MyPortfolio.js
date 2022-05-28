@@ -2,9 +2,9 @@ import React from "react";
 import Portfolio from "../Assets/img/protfolio.jpg";
 const MyPortfolio = () => {
   return (
-    <div className=" py-10 bg-base-300 ">
+    <div className=" py-8 bg-base-300 ">
       <div class="  flex justify-center items-center">
-        <div class="container-fluid p-3 md:p-32">
+        <div class="container-fluid p-3 md:p-5">
           <figure class="md:flex bg-white rounded-xl p-2 md:p-0 overflow-hidden">
             <img
               class="w-32 h-32 md:w-48 md:h-auto md:rounded-none rounded-full mx-auto"
